@@ -83,6 +83,8 @@ else
 	local boost-python-version = "boost_python" [ SPLIT_BY_CHARACTERS [ feature.values python ] : "." ] ;
 	local darwin-boost-python = $(boost-python-version) "-mt" ;
 
+	ECHO "using " $(boost-python-version:J) ;
+
 	# the names are decorated in brew
 	lib boost_python : : <target-os>darwin <name>boost_python27-mt
 		: : $(boost-include-path) ;

@@ -134,7 +134,9 @@ install:
        <linkflags>-mios-version-min=7
        <linkflags>\"-arch armv7\"
        <linkflags>-fobjc-abi-version=2 ;" >>~/user-config.jam'
-  - 'echo "using python : : $(which python3) ;" >> ~/user-config.jam'
+  - 'echo "using python : 3.9 : $(which python3) : /usr/local/Frameworks/Python.framework/Headers : : <target-os>darwin ;" >> ~/user-config.jam'
+  - 'echo "using python : : $(which python3) : : : <target-os>linux ;" >> ~/user-config.jam'
+
   - if [ "$docs" == "1" ]; then rst2html.py --version; fi
   - 'if [ "$pylint" == "1" ]; then
       sudo pip3 install flake8;
