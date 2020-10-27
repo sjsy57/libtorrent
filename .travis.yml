@@ -74,7 +74,7 @@ before_install:
       sysctl hw.ncpu;
     fi'
   - 'if [[ $TRAVIS_OS_NAME == "osx" ]]; then
-      travis_retry brew install ccache boost-build boost-python3i python@3.9 ;
+      travis_retry brew install ccache boost-build boost-python3 python@3.9 ;
       boost-
     fi'
   # we have to use python from brew rather than the system provided python
